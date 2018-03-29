@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 public class ServiceAFeignClientFallback implements ServiceAFeignClient {
 
     @Override
-    public String hi(String id) {
-        return "hi, " + id + ", error!";
+    public String hello(String name) {
+        return "hello, " + name + ", error!";
     }
 
 }

@@ -24,8 +24,8 @@ public class ServiceA {
     private String port;
 
     @RequestMapping("/hello")
-    public String hello(@RequestParam String client){
-        return "hello, " + client + ", My name:" + name + ", My port:" + port;
+    public String hello(@RequestParam String name){
+        return "hello, " + name + ", port" + port;
     }
 
 }

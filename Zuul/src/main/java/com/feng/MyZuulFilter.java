@@ -7,12 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * @author fengzp
- * @date 17/4/27
- * @email fengzp@gzyitop.com
- * @company 广州易站通计算机科技有限公司
- */
+
 public class MyZuulFilter extends ZuulFilter {
 
     private static Logger log = LoggerFactory.getLogger(MyZuulFilter.class);
@@ -60,7 +55,7 @@ public class MyZuulFilter extends ZuulFilter {
         HttpServletRequest request = ctx.getRequest();
 
         log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-        Object accessToken = request.getParameter("id");
+        Object accessToken = request.getParameter("name");
         if(accessToken == null) {
             log.warn("id is null");
             ctx.setSendZuulResponse(false);

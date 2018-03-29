@@ -13,8 +13,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/fengzp/config/ #git仓库地址
-          searchPaths: demo* #搜索路径
+          uri: https://github.com/CR7357353615/Config/ #git仓库地址
+          searchPaths: SpringCloudDemo #搜索路径
 #          username: username
 #          password: password
   application:

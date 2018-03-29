@@ -12,6 +12,7 @@
     <artifactId>client-a</artifactId>
 
     <dependencies>
+        <!--负载均衡-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-ribbon</artifactId>

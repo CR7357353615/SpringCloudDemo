@@ -9,12 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author fengzp
- * @date 17/5/9
- * @email fengzp@gzyitop.com
- * @company 广州易站通计算机科技有限公司
- */
 @RestController
 @RefreshScope
 public class TestController {
@@ -22,14 +16,14 @@ public class TestController {
     @Autowired
     RestTemplate restTemplate;
 
-    @RequestMapping("/hi")
+    @RequestMapping("/hello")
     @HystrixCommand(fallbackMethod = "hiFallback")
-    public String hi(@RequestParam String id){
-        return restTemplate.getForObject("http://service-a/hi?id="+id, String.class);
+    public String hello(@RequestParam String name){
+        return restTemplate.getForObject("http://service-a/hello?name="+ name, String.class);
     }
 
-    public String hiFallback(String id) {
-        return "hi, " + id + ", error!";
+    public String hiFallback(String name) {
+        return "hello, " + name + ", error!";
     }
 
     @Value("${ip}")
