@@ -8,12 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author fengzp
- * @date 17/4/27
- * @email fengzp@gzyitop.com
- * @company 广州易站通计算机科技有限公司
- */
+
 @SpringBootApplication
 @EnableDiscoveryClient
 @RestController
@@ -28,9 +23,8 @@ public class ServiceApplication {
     @Value("${server.port}")
     private String port;
 
-    @RequestMapping("/hi")
-    public String hi(@RequestParam String id){
-        return "hi, " + id + ", " + name + ":" + port;
+    @RequestMapping("/hello")
+    public String hello(@RequestParam String client){
+        return "hello, " + client + ", My name:" + name + ", My port:" + port;
     }
-
 }
